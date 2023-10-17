@@ -1,5 +1,7 @@
 'usestrict';
 
+// selectors
+
 const start_Game_Button = document.querySelector('.header button');
 const header_display = document.querySelector('.header');
 const playing_Section = document.querySelector('.playing');
@@ -14,11 +16,16 @@ const go_Button = document.querySelector('.go-button');
 const winner_Para = document.querySelector('.winner-Quote');
 const player_Score_Para = document.querySelector('.player-score');
 const computer_Score_Para = document.querySelector('.computer-score');
+// ____________________________________________________________________________
 
+// variables global scope
 let active_Computer;
 let player_Score = 0;
 let computer_Score = 0;
 
+// ___________________________________________________
+
+// start game function
 const start_Game = function () {
   header_display.classList.add('hidden');
   playing_Section.classList.remove('hidden');
@@ -26,6 +33,9 @@ const start_Game = function () {
 
 start_Game_Button.addEventListener('click', start_Game);
 
+// ____________________________________________________________
+
+// player selecting between rock,paper & scissors function
 const selecting = function () {
   if (player_Choice.value === 'rock') {
     player_Img_Rock.classList.add('active-background');
@@ -44,7 +54,9 @@ const selecting = function () {
 
 player_Choice.addEventListener('change', selecting);
 
-// _______________________________________________
+// ___________________________________________________________________
+
+// computer selecting rock,paper & scissors after you press GO button
 
 const random_Computer = function () {
   winner_Para.textContent = '';
@@ -72,6 +84,9 @@ const random_Computer = function () {
 };
 
 go_Button.addEventListener('click', random_Computer);
+// ___________________________________________________________________________
+
+// comparing between player and computer choice and deciding the winner function
 
 const winner = function () {
   if (active_Computer === player_Choice.value) {
@@ -108,5 +123,3 @@ const winner = function () {
     computer_Score_Para.textContent = `Computer--${computer_Score}`;
   }
 };
-
-console.log(computer_Score, player_Score);
