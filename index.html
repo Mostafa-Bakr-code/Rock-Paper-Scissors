@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Rock-Paper-Scissors</title>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="header">
+      <h3>Rock-Paper-Scissors</h3>
+      <div class="header-img"><img src="./images/logo.jpg" alt="" /></div>
+      <button>Start Game</button>
+    </div>
+
+    <div class="playing hidden">
+      <div class="player">
+        <p class="player-score">Player--0</p>
+        <select name="" id="player-Choice">
+          <option value="">Select</option>
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+        </select>
+        <img src="./images/rock.svg" alt="" width="100px" id="img-rock" />
+        <img src="./images/paper.svg" alt="" width="100px" id="img-paper" />
+        <img
+          src="./images/scissors.svg"
+          alt=""
+          width="100px"
+          id="img-scissors"
+        />
+        <button class="go-button">Go !</button>
+      </div>
+
+      <div class="vs">
+        <h3>VS</h3>
+        <p class="winner-Quote"></p>
+      </div>
+
+      <div class="computer">
+        <p class="computer-score">Computer--0</p>
+        <select name="" id="computer-select"></select>
+        <img src="./images/rock.svg" alt="" width="100px" id="comp-rock" />
+        <img src="./images/paper.svg" alt="" width="100px" id="comp-paper" />
+        <img
+          src="./images/scissors.svg"
+          alt=""
+          width="100px"
+          id="comp-scissors"
+        />
+      </div>
+    </div>
+
+    <script src="./my.js"></script>
+  </body>
+</html>
