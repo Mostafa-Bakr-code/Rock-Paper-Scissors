@@ -57,6 +57,7 @@ player_Choice.addEventListener('change', selecting);
 // ___________________________________________________________________
 
 // computer selecting rock,paper & scissors after you press GO button
+//  activating winner function
 
 const random_Computer = function () {
   winner_Para.textContent = '';
@@ -91,32 +92,19 @@ go_Button.addEventListener('click', random_Computer);
 const winner = function () {
   if (active_Computer === player_Choice.value) {
     winner_Para.textContent = 'Tie';
-  } else if (active_Computer === 'rock' && player_Choice.value === 'paper') {
-    winner_Para.textContent = 'player wins';
-    player_Score++;
-    player_Score_Para.textContent = `Player--${player_Score}`;
-  } else if (active_Computer === 'rock' && player_Choice.value === 'scissors') {
-    winner_Para.textContent = 'computer wins';
-    computer_Score++;
-    computer_Score_Para.textContent = `Computer--${computer_Score}`;
-  } else if (active_Computer === 'paper' && player_Choice.value === 'rock') {
-    winner_Para.textContent = 'computer wins';
-    computer_Score++;
-    computer_Score_Para.textContent = `Computer--${computer_Score}`;
+    // _______________________________________
   } else if (
-    active_Computer === 'paper' &&
-    player_Choice.value === 'scissors'
+    (active_Computer === 'rock' && player_Choice.value === 'paper') ||
+    (active_Computer === 'paper' && player_Choice.value === 'scissors') ||
+    (active_Computer === 'scissors' && player_Choice.value === 'rock')
   ) {
     winner_Para.textContent = 'player wins';
     player_Score++;
     player_Score_Para.textContent = `Player--${player_Score}`;
-  } else if (active_Computer === 'scissors' && player_Choice.value === 'rock') {
-    winner_Para.textContent = 'player wins';
-    player_Score++;
-    player_Score_Para.textContent = `Player--${player_Score}`;
   } else if (
-    active_Computer === 'scissors' &&
-    player_Choice.value === 'paper'
+    (active_Computer === 'rock' && player_Choice.value === 'scissors') ||
+    (active_Computer === 'paper' && player_Choice.value === 'rock') ||
+    (active_Computer === 'scissors' && player_Choice.value === 'paper')
   ) {
     winner_Para.textContent = 'computer wins';
     computer_Score++;
